@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Typing of Trypanosoma cruzi through NGS Sequencing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #ccddff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .sidebar {
+            flex: 0 0 200px;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+            background-color: #ccddff;
+        }
+
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #333;
+            padding: 5px;
+        }
+
+        .sidebar a:hover {
+            color: #0066cc;
+            background-color: #f2f2f2;
+        }
+
+        .bibliography, .video-section, .typing, .databases {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-left: 10px;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> Typing of <em>Trypanosoma cruzi</em> through mHVR Amplicon Sequencing</h1>
+        <a href="https://ipe.conicet.gov.ar"><img class="logo" src="https://i.ibb.co/ryqQBXz/logo-ipe.jpg" alt="logo-ipe" border="0"></a>
+    </header>
+    <div class="sidebar">
+                <a href="#Trypanosoma cruzi Typing"><i class="fas fa-microscope"></i> Typing tool</a>
+                <a href="#Reference Databases"><i class="fas fa-database"></i> Reference Databases</a>        
+                <a href="#Video Tutorial"><i class="fas fa-video"></i> Tutorials</a>
+        <a href="#Sequences Example"><i class="fas fa-dna"></i> Example Reads</a>
+
+        <a href="#Citations"><i class="fas fa-quote-right"></i> Citations</a>
+
+    </div>
+    <div class="content">
+        <p> This site is intended to typing Trypanosoma cruzi DTUs by using amplicon sequencing of the minicircle Hypervariable Sequences (mHVR). Here, you can:</p><p>
+        1) Download the Reference Databases of mHVR sequences for different strains and DTUs of <em>Trypanosoma cruzi</em>.</p><p>
+        2) Run a Google colab notebook for analyzing your own mHVR reads from a strain or sample in order to assign DTU. </p><p> We recommend to visit the tutorial section with a step-by-step guide and a video tutorial. The <em>"Wide reference databases for typing Trypanosoma cruzi based on amplicon sequencing of the minicircle hypervariable region".</em></p>
+        <section class="typing" id="Trypanosoma cruzi Typing">
+        <h2> Typing tool</h2>
+       <p>The link below will redirect you to a Google Colab notebook which allows to run the bioinformatic tools required for typing in Google cloud. This notebook is designed for an easy run of bioinformatic steps for <em>Trypanosoma cruzi</em> DTU typing using mHVR amplicon sequencing data.</p>
+<style>
+    .colab-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #4285f4;
+        transition: transform 0.3s ease;
+        font-weight: bold;
+    }
+    .colab-link:hover {
+        transform: scale(1.1);
+    }
+    .colab-icon {
+        width: 60px;
+        margin-right: 10px;
+    }
+</style>
+<a target="_blank" href="https://colab.research.google.com/github/ntomasini/cruzityping/blob/main/typingcruzi.ipynb" class="colab-link">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab Icon" class="colab-icon"/>
+    Access Google Colab
+</a>
+
+    </section>
+    <section class="databases" id="Reference Databases">
+        <h2>Reference Databases</h2>
+        <ul>
+            <li><a target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/rep_set85_FINAL.fasta">mHVR reference datasets 85% identity threshold</a></li>
+            <li><a target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/rep_set95_FINAL.fasta">mHVR reference datasets 95% identity threshold</a></li></ul>
+    </section>
+        <section class="video-section" id="Video Tutorial">
+            <h2>Video Tutorial</h2>
+            <p>In this video, step-by-step usage of the notebook for the developed workflow of DTU typing based on mHVR sequences is demonstrated.</p>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+       
+
+    <section id="Sequences-Example">
+        <h2>Sequences Example</h2>
+        <p>The downloadable .zip file containing mHVR sequences that are essential for replicating the suggested DTU typing workflow.</p>
+        <a  target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/exampleSet.zip">Download mHVR Sequences</a>
+    </section>
+
+   
+ 
+        <h3>Steps:</h3>
+<p>
+  1. Load ".fastq" or ".fastq.gz" files into a folder in your Google Drive. All ".fastq" or ".fastq.gz" reads in the folder will be analyzed (you should have R1 and R2 files for each sample). Don't use a folder name with spaces, e.g. instead of "my seqs" use "my_seqs". Using Google Drive is recommended because files are not deleted when the notebook is disconnected. However, you should trust in the Colab provider because the Colab will have access to your Google Drive files.
+</p>
+<p>
+  2. Alternatively, you can create a folder by clicking on the folder icon of the left panel, then right-click and "new folder". Upload your files in that folder. An example dataset is provided in order to test.
+</p>
+
+  <h3>Set Parameters:</h3>
+  <ol>
+    <li>Set the "folder" parameter name as the folder in your Google Drive or the local folder in the colab.</li>
+    <li>Set the reference set (set 95 for more specificity on co-infections or set 85 for samples that cannot be
+      tipified by the 95 referenceSet).</li>
+    <li>Ensure that file names end with the values provided in <code>filename_end_R1</code> and <code>filename_end_R2</code>
+      for each sample,</li>
+    <p>e.g. if your filename for R1 reads is <strong>sar1006-2022_H1_S9_R1_001.fastq.gz</strong></p>
+    <p>set</p>
+    <code>filename_end_R1 = 'R1_001'</code>
+    <code>my_file_type = '.fastq.gz'</code>
+    <p>e.g. if your filename for R2 reads is <strong>sar1007-2023_H1_S9_R1.fastq</strong></p>
+    <p>set</p>
+    <code>filename_end_R1 = 'R2'</code>
+    <code>my_file_type = '.fastq'</code>
+    <li>If the checkbox 'gdrive' is checked, Google Drive files will be used. If it is not checked, the local folder
+      where you uploaded your sequences will be used. Select use_example_dataset if you do not have a dataset but you
+      want to test this tool (an example dataset will be downloaded from github).</li>
+    <li>Press Ctrl + F9 to run all cells or run each one at a time by clicking on the play button to the left of each
+      cell. A login page to Google drive will be opened if you selected gdrive, you need to authorize colab to access
+      your files.</li>
+    <li>The summary will be printed in the last cell. Additionally, you can find the results in your Google Drive. The
+      results should be in the folder "Typing_Results" within the folder you specified in Google Drive or in the local
+      folder.</li>
+    <li>Press Ctrl + F9 to run all cells or run each one at a time by clicking on the play button to the left of each cell. A login page to Google drive will be opened if you selected gdrive, you need to authorize colab to access your files.
+    <li>The summary will be printed in the last cell. Additionally, you can find the results in your Google Drive. The results should be in the folder "Typing_Results" within the folder you specified in Google Drive or in the local folder.</li>
+  </ol>
+
+  <p>Important if a step was interrupted by co  lab disconnection you can run again if you selected the gdrive option:</p>
+  <ol>
+    <li>Run 'Set Parameters' cell</li>
+    <li>Run the cells that were not completed</li>
+<p>After specifying the parameters and setting up input and output paths for data analysis, the workflow will follow the steps described in the Materials and Methods section of the associated publication.</p>
+    </ol>
+
+    <section id="Citations">
+        <h2>Citations</h2>
+      <p>Please cite the following papers when using this tool:</p>
+               <div class="bibliography">
+            <ul>             
+              <p>Bolger AM, Lohse M, Usadel B. <b>Trimmomatic: A flexible trimmer for Illumina sequence data.</b> Bioinformatics. 2014;30(15):2114-20.<a href="https://doi.org/10.1093/bioinformatics/btu170">https://doi.org/10.1093/bioinformatics/btu170</a><p>
+       		  <p>Renaud, G., Stenzel, U. & Kelso, J. <b>LeeHom: Adaptor trimming and merging for Illumina sequencing reads.</b> Nucleic Acids Res, 2014;42(18):e141.<a href=" https://doi.org/10.1093/nar/gku699" >https://doi.org/10.1093/nar/gku699</a><p>
+              <p>Robert C. Edgar. <b>Search and clustering orders of magnitude faster than BLAST.</b> Bioinformatics. 2010;26(19):2460–2461.<a href="https://doi.org/10.1093/bioinformatics/btq461">https://doi.org/10.1093/bioinformatics/btq461</a><p></ul>
+        </div>
+    </section>
+    <section id="Video Tutorial"> 
+        <h2>Video Tutorial</h2>
+        <p>In this video, step-by-step usage of the notebook for the developed workflow of DTU typing based on mHVR sequences is demonstrated.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    </div>
+</body>
+
+</html>
