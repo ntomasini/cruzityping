@@ -17,10 +17,11 @@
             padding: 20px;
             background-color: #f9f9f9;
             color: #333;
+            padding-left: 200px; /* Tamaño de la barra lateral */
         }
 
         header {
-            width: 100%;
+            width: calc(100% - 200px); /* Ajustar al tamaño de la barra lateral */
             text-align: center;
             margin-bottom: 30px;
             background-color: #ccddff;
@@ -40,10 +41,15 @@
         .content {
             flex: 1;
             padding: 20px;
+            text-align: justify;
         }
 
         .sidebar {
-            flex: 0 0 200px;
+           position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 200px; /* Tamaño de la barra lateral */
             padding: 20px;
             border-right: 1px solid #ccc;
             background-color: #ccddff;
@@ -62,14 +68,20 @@
             background-color: #f2f2f2;
         }
 
-        .bibliography, .video-section, .typing, .databases {
+        .citas, .video-section, .typing, .databases, .example {
+            
             margin-top: 20px;
             padding: 20px;
             border: 1px solid #ccc;
             background-color: #ffffff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 200px)
+         
         }
-
+        .intro {
+            width: calc(100% - 200px)
+            
+        }
         .logo {
             max-width: 150px;
             margin-left: 10px;
@@ -92,15 +104,18 @@
                 <a href="#Trypanosoma cruzi Typing"><i class="fas fa-microscope"></i> Typing tool</a>
                 <a href="#Reference Databases"><i class="fas fa-database"></i> Reference Databases</a>        
                 <a href="#Video Tutorial"><i class="fas fa-video"></i> Tutorials</a>
-        <a href="#Sequences Example"><i class="fas fa-dna"></i> Example Reads</a>
+        <a href="#Sequences-Example"><i class="fas fa-dna"></i> Example Reads</a>
 
         <a href="#Citations"><i class="fas fa-quote-right"></i> Citations</a>
 
     </div>
     <div class="content">
+         <section class="intro" id="introduction">
         <p> This site is intended to typing Trypanosoma cruzi DTUs by using amplicon sequencing of the minicircle Hypervariable Sequences (mHVR). Here, you can:</p><p>
         1) Download the Reference Databases of mHVR sequences for different strains and DTUs of <em>Trypanosoma cruzi</em>.</p><p>
-        2) Run a Google colab notebook for analyzing your own mHVR reads from a strain or sample in order to assign DTU. </p><p> We recommend to visit the tutorial section with a step-by-step guide and a video tutorial. The <em>"Wide reference databases for typing Trypanosoma cruzi based on amplicon sequencing of the minicircle hypervariable region".</em></p>
+        2) Run a Google colab notebook for analyzing your own mHVR reads from a strain or sample in order to assign DTU (see Typing Tool Section). </p><p> We recommend to visit the tutorial section with a step-by-step guide and a video tutorial. </p>
+        </section>
+        
         <section class="typing" id="Trypanosoma cruzi Typing">
         <h2> Typing tool</h2>
        <p>The link below will redirect you to a Google Colab notebook which allows to run the bioinformatic tools required for typing in Google cloud. This notebook is designed for an easy run of bioinformatic steps for <em>Trypanosoma cruzi</em> DTU typing using mHVR amplicon sequencing data.</p>
@@ -114,7 +129,7 @@
         font-weight: bold;
     }
     .colab-link:hover {
-        transform: scale(1.1);
+        transform: scale(1.02);
     }
     .colab-icon {
         width: 60px;
@@ -129,26 +144,22 @@
     </section>
     <section class="databases" id="Reference Databases">
         <h2>Reference Databases</h2>
+        <p> The mHVR reference sequences used for DTU typing can be downloaded below. Two different Reference databases were built by using a 85% and 95% pairwise identity thresholds defining mHVR clusters. Then, the most frequent mHVR sequence for each cluster was selected as the cluster representative (reference). The reference dataset is in fasta format. The number after ">" indicates the mHVR cluster id and the strain name is also indicated. The DTU for each mHVR cluster id can be found in the "Cluster identity" file.
+        <p>Set 95%. Recommended </p>
         <ul>
-            <li><a target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/rep_set85_FINAL.fasta">mHVR reference datasets 85% identity threshold</a></li>
-            <li><a target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/rep_set95_FINAL.fasta">mHVR reference datasets 95% identity threshold</a></li></ul>
+            <li><a target="_blank" href="https://raw.githubusercontent.com/ntomasini/cruzityping/main/rep_set95_FINAL.fasta" class="colab-link">mHVR reference datasets (95%)</a></li>
+            <li><a target="_blank" href="https://raw.githubusercontent.com/ntomasini/cruzityping/main/OtuTypes95.txt" class="colab-link">Cluster identity (95%)</a></li></ul>
+        <p>Set 85%. Use only to identify the main DTU in a sample when the 95% set fails to do it.</p>
+        <ul>
+            <li><a target="_blank" href="https://raw.githubusercontent.com/ntomasini/cruzityping/main/rep_set85_FINAL.fasta" class="colab-link" >mHVR reference datasets (85% )</a></li>
+            <li><a target="_blank" href="https://raw.githubusercontent.com/ntomasini/cruzityping/main/OtuTypes85.txt" class="colab-link">Cluster identity (85%)</a></li></ul>
+           
     </section>
         <section class="video-section" id="Video Tutorial">
-            <h2>Video Tutorial</h2>
-            <p>In this video, step-by-step usage of the notebook for the developed workflow of DTU typing based on mHVR sequences is demonstrated.</p>
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
-       
-
-    <section id="Sequences-Example">
-        <h2>Sequences Example</h2>
-        <p>The downloadable .zip file containing mHVR sequences that are essential for replicating the suggested DTU typing workflow.</p>
-        <a  target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/exampleSet.zip">Download mHVR Sequences</a>
-    </section>
-
-   
- 
-        <h3>Steps:</h3>
+            <h2>Tutorial</h2>
+            <p>In this video, a step-by-step usage of the Google colab notebook for typing is shown.</p>
+            <iframe src="https://www.youtube.com/embed/lwdp1bx2znU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p><b>Step-by-step Guide</b></p>
 <p>
   1. Load ".fastq" or ".fastq.gz" files into a folder in your Google Drive. All ".fastq" or ".fastq.gz" reads in the folder will be analyzed (you should have R1 and R2 files for each sample). Don't use a folder name with spaces, e.g. instead of "my seqs" use "my_seqs". Using Google Drive is recommended because files are not deleted when the notebook is disconnected. However, you should trust in the Colab provider because the Colab will have access to your Google Drive files.
 </p>
@@ -190,22 +201,31 @@
     <li>Run the cells that were not completed</li>
 <p>After specifying the parameters and setting up input and output paths for data analysis, the workflow will follow the steps described in the Materials and Methods section of the associated publication.</p>
     </ol>
+        </section>
+       
 
-    <section id="Citations">
+    <section class="example" id="Sequences-Example" >
+        <h2>Example Reads</h2>
+        <p>The downloadable .zip file containing mHVR sequences that are essential for replicating the suggested DTU typing workflow.</p>
+        <a  target="_blank" href="https://github.com/ntomasini/cruzityping/blob/main/exampleSet.zip" class="colab-link">Download mHVR Reads</a>
+    </section>
+
+   
+
+
+
+    <section class="citas" id="Citations">
         <h2>Citations</h2>
       <p>Please cite the following papers when using this tool:</p>
                <div class="bibliography">
-            <ul>             
+            <ul>
+              <p>Rusman et al, 2023 <em>"Wide reference databases for typing Trypanosoma cruzi based on amplicon sequencing of the minicircle hypervariable region" .</em></p>             
               <p>Bolger AM, Lohse M, Usadel B. <b>Trimmomatic: A flexible trimmer for Illumina sequence data.</b> Bioinformatics. 2014;30(15):2114-20.<a href="https://doi.org/10.1093/bioinformatics/btu170">https://doi.org/10.1093/bioinformatics/btu170</a><p>
        		  <p>Renaud, G., Stenzel, U. & Kelso, J. <b>LeeHom: Adaptor trimming and merging for Illumina sequencing reads.</b> Nucleic Acids Res, 2014;42(18):e141.<a href=" https://doi.org/10.1093/nar/gku699" >https://doi.org/10.1093/nar/gku699</a><p>
               <p>Robert C. Edgar. <b>Search and clustering orders of magnitude faster than BLAST.</b> Bioinformatics. 2010;26(19):2460–2461.<a href="https://doi.org/10.1093/bioinformatics/btq461">https://doi.org/10.1093/bioinformatics/btq461</a><p></ul>
         </div>
     </section>
-    <section id="Video Tutorial"> 
-        <h2>Video Tutorial</h2>
-        <p>In this video, step-by-step usage of the notebook for the developed workflow of DTU typing based on mHVR sequences is demonstrated.</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
+   
 
     </div>
 </body>
